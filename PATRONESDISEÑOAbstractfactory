@@ -1,0 +1,25 @@
+package creacional.abstractfactory;
+public class AdminUIFactory implements UIFactory {
+
+    @Override
+    public Boton crearBoton() { return new Boton("Editar producto");
+            }
+    }
+package creacional.abstractfactory;
+public class Boton {
+    private String texto;
+    public Boton(String texto) {         this.texto = texto;     }
+    public void render() {         System.out.println("Boton: " + texto);
+    }
+}
+package creacional.abstractfactory;
+public class ClienteUIFactory implements UIFactory{
+
+    @Override
+    public Boton crearBoton() { return new Boton("Comprar ahora");
+    }  
+}
+package creacional.abstractfactory;
+public interface UIFactory {
+    Boton crearBoton();
+}
